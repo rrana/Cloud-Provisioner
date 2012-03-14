@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update && apt-get -y upgrade 
 
 # Find the current IP of the puppet master and make "puppet" point to it
-puppet_master_ip=$(host my_puppet_master.company.com | grep "has address" | head -1 | awk '{print $NF}')
+puppet_master_ip=$(host puppetmaster.newscred.com | grep "has address" | head -1 | awk '{print $NF}')
 echo $puppet_master_ip puppet >> /etc/hosts
 
 aptitude -y install puppet 
